@@ -41,7 +41,9 @@ public class CustomListTest {
         list.addCity(new City("Estevan", "SK"));
         assertEquals(list.getCount(), listSize+1);
     }
-
+    /**
+     * check if the city is in the list
+     */
     @Test
     public void hasCityTest(){
         city = MockCity();
@@ -49,7 +51,9 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(list.hasCity(city), true);
     }
-
+    /**
+     * check if the city is removed from the list
+     */
     @Test
     public void removeCityTest(){
         list = MockCityList();
@@ -58,5 +62,17 @@ public class CustomListTest {
         int listSize = list.getCount();
         list.removeCity(city);
         assertEquals(list.getCount(), listSize-1);
+    }
+
+    /**
+     * tests the number of cities in list is correct
+     */
+    @Test
+    public void countCityTest(){
+        list = MockCityList();
+        city = MockCity();
+        // 6 cities added in main, check if len returned is 6
+        int listSize = list.countCities();
+        assertEquals(list.getCount(), listSize);
     }
 }
