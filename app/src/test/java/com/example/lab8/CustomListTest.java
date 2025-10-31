@@ -37,13 +37,13 @@ public class CustomListTest {
     @Test
     public void addCityTest(){
         list = MockCityList();
-        int listSize = list.getCount();
         list.add(new City("Edmonton","AB"));
         list.add(new City("Vancouver","BC"));
         list.add(new City("Toronto","ON"));
         list.add(new City("Hamilton","ON"));
         list.add(new City("Calgary","AB"));
         list.add(new City("Waterloo","ON"));
+        int listSize = list.getCount();
         assertEquals(list.getCount(), listSize+1);
     }
     /**
