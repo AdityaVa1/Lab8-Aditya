@@ -49,4 +49,14 @@ public class CustomListTest {
         list.addCity(city);
         assertEquals(list.hasCity(city), true);
     }
+
+    @Test
+    public void removeCityTest(){
+        list = MockCityList();
+        city = MockCity();
+        list.addCity(city);
+        int listSize = list.getCount();
+        list.removeCity(city);
+        assertEquals(list.getCount(), listSize-1);
+    }
 }
